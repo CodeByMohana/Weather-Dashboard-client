@@ -18,7 +18,7 @@ function App() {
     setError("");
     try {
       const response = await axios.get(
-        `http://localhost:3005/weather?city=${city}`
+        `${process.env.REACT_APP_API_BASE}/weather?city=${city}`
       );
       setWeather(response.data);
     } catch (err) {
